@@ -14,6 +14,6 @@ public interface BrugereviewRepository extends JpaRepository<Brugereview, Intege
     findAllByAfdelingslederidOrderByBrugernavn(Integer id);
 
     List<Brugereview>
-    findAllOrderByBrugernavn();
+    findAllByOrderByBrugernavn();
 
 }
