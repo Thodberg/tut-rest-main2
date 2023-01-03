@@ -155,6 +155,8 @@ public class Rollebrugersystemrettighedview {
         this.automatiskopdatering = automatiskopdatering;
     }
 
+
+
     public Integer getRevideringsfrekvens() {
         return revideringsfrekvens;
     }

@@ -9,7 +9,24 @@ public interface RollebrugersystemrettighedviewRepository extends JpaRepository<
 
     public List<Rollebrugersystemrettighedview>
         findAllByRollenavnAndRettighedstypesystemidEqualsAndRolleindehaveridEquals
-            (String rollenavn, Integer rettighedtypesystemid, Integer rolleindehaveid  );
+            (String rollenavn, Integer rettighedtypesystemid, Integer rolleindehaveid);
+
+    public List<Rollebrugersystemrettighedview>
+    findAllByRollenavnEqualsAndRolleindehaveridEquals
+            (String rollenavn, Integer rolleindehaveid);
+
+    public List<Rollebrugersystemrettighedview>
+    findAllByRollenavnEquals
+            (String rollenavn);
+
+    public List<Rollebrugersystemrettighedview>
+    findAllByRollenavnEqualsAndRolleindehaveridEqualsOrderBySystemnavn
+            (String rollenavn, Integer rolleindehaveid);
+
+    public List<Rollebrugersystemrettighedview>
+    findAllByRollenavnEqualsOrderBySystemnavn
+            (String rollenavn);
+
 
 
 }

@@ -19,13 +19,11 @@ class RettighedstypesystemController {
     }
 
 
-    // Aggregate root
-    // tag::get-aggregate-root[]
-    @GetMapping("/rettighedstypesystem")
+     @GetMapping("/rettighedstypesystem")
     List<Rettighedstypesystem> all() {
         return rettighedstypesystemRepository.findAll();
     }
-    // end::get-aggregate-root[]
+
 
     @PostMapping("/rettighedstypesystem")
     Rettighedstypesystem newRettighedstypesystem(@RequestBody Rettighedstypesystem newRettighedstypesystem) {

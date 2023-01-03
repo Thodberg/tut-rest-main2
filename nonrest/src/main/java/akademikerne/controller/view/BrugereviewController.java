@@ -1,6 +1,7 @@
 package akademikerne.controller.view;
 
 
+import akademikerne.AkademikerneApplication;
 import akademikerne.controller.UtilController;
 import akademikerne.domain.view.Brugereview;
 import akademikerne.repository.view.BrugereviewRepository;
@@ -26,6 +27,20 @@ class BrugereviewController {
     List<Brugereview> all() {
         return brugereviewRepository.findAll();
     }
+
+    @GetMapping("/brugereview/systemejer")
+    List<Brugereview> allbrugere() {
+        return brugereviewRepository.findAllOrderByBrugernavn();
+    }
+
+
+    @GetMapping("/brugereview/afdelinger")
+    List<Brugereview> allBrugereAfdeling() {
+        Integer  afdelingslederid = AkademikerneApplication.getPrincipalUser().getBrugerid();
+        List<Brugereview> list1 = brugereviewRepository.findAllByAfdelingslederidOrderByBrugernavn(afdelingslederid);
+        return list1;
+    }
+
 }
 
 

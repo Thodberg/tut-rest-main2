@@ -59,7 +59,7 @@ class RettighedstypesystembrugerController {
     }
 
     @PostMapping("/rettighedstypesystembruger/opret")
-    Rettighedstypesystembruger opretAfdelingerRettighedstypesystembruger(@RequestBody Rettighedstypesystembruger rettighedstypesystembruger) {
+    Rettighedstypesystembrugerview opretAfdelingerRettighedstypesystembruger(@RequestBody Rettighedstypesystembruger rettighedstypesystembruger) {
 
         Integer brugerid = rettighedstypesystembruger.getBrugerid();
         Optional<Brugereview> brugereviewFound = this.brugereviewRepository.findById(brugerid);
@@ -92,7 +92,13 @@ class RettighedstypesystembrugerController {
         naesteRevDato.setMonth(monthNow + revfrekvens);
         rettighedstypesystembruger.setNaesterevideringsdato(naesteRevDato);
 
-        return rettighedstypesystembrugerRepository.save(rettighedstypesystembruger);
+        rettighedstypesystembrugerRepository.save(rettighedstypesystembruger);
+
+        Rettighedstypesystembrugerview rettighedstypesystembrugerviewFound =
+                this.getRettighedstypesystembrugerviewFromID(rettighedstypesystembruger.getRettighedstypesystembrugerId());
+
+        return rettighedstypesystembrugerviewFound;
+
     }
 
 
