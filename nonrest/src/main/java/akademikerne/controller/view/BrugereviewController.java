@@ -15,6 +15,7 @@ class BrugereviewController {
 
     private final BrugereviewRepository brugereviewRepository;
 
+    /** Controller til brugerview*/
     BrugereviewController(BrugereviewRepository repository) {
         this.brugereviewRepository = repository;
     }
