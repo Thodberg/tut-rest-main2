@@ -1,17 +1,13 @@
 package akademikerne.controller.table;
 
 
-import akademikerne.AkademikerneApplication;
 import akademikerne.controller.UtilController;
 import akademikerne.domain.table.Brugere;
 import akademikerne.exception.NotFoundException;
 import akademikerne.repository.table.BrugereRepository;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
-import java.util.*;
+import java.util.List;
 
 @CrossOrigin(origins = UtilController.KLIENT_URL)
 @RestController
@@ -23,20 +19,20 @@ class BrugereController {
         this.brugereRepository = brugereRepository;
     }
 
-    @RequestMapping("/resource")
+    /**@RequestMapping("/resource")
     public Map<String,Object> home() {
         Map<String,Object> model = new HashMap<String,Object>();
         model.put("id", UUID.randomUUID().toString());
         model.put("content", "Hello World");
         return model;
-    }
+    }**/
 
     /**@RequestMapping("/user")
     public Principal user(Principal user) {
         return user;
     }**/
 
-    @RequestMapping("/login")
+    /**@RequestMapping("/login")
     public boolean login(@RequestBody SecurityProperties.User user) {
 
         //return user.getUserName().equals("user") && user.getPassword().equals("password");
@@ -58,15 +54,15 @@ class BrugereController {
             return false;
         }
 
-    }
+    }**/
 
-    @RequestMapping("/user")
+    /**@RequestMapping("/user")
     public Principal user(HttpServletRequest request) {
         String authToken = request.getHeader("Authorization")
                 .substring("Basic".length()).trim();
         return () ->  new String(Base64.getDecoder()
                 .decode(authToken)).split(":")[0];
-    }
+    }**/
 
 
     // Aggregate root
