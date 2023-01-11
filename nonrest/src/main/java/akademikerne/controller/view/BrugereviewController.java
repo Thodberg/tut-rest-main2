@@ -30,11 +30,13 @@ class BrugereviewController {
 
     @GetMapping("/brugereview/systemejer")
     List<Brugereview> allbrugere() {
-        return brugereviewRepository.findAllByOrderByBrugernavn();
+        List<Brugereview> list1 =
+        brugereviewRepository.findAllByOrderByBrugernavn();
+        return list1;
     }
 
 
-    @GetMapping("/brugereview/afdelinger")
+    @GetMapping("/brugereview/afdelingsleder")
     List<Brugereview> allBrugereAfdeling() {
         Integer  afdelingslederid = AkademikerneApplication.getPrincipalUser().getBrugerid();
         List<Brugereview> list1 = brugereviewRepository.findAllByAfdelingslederidOrderByBrugernavn(afdelingslederid);

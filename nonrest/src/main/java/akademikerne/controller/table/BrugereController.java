@@ -32,7 +32,7 @@ class BrugereController {
         return user;
     }**/
 
-    /**@RequestMapping("/login")
+   /** @RequestMapping("/login")
     public boolean login(@RequestBody SecurityProperties.User user) {
 
         //return user.getUserName().equals("user") && user.getPassword().equals("password");

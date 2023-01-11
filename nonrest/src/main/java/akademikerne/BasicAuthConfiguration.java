@@ -1,28 +1,26 @@
-package akademikerne;
+/**package akademikerne;
 
-/**import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.SecurityFilterChain;**/
 
-@Configuration
+/**@Configuration
 @EnableWebSecurity
 public class BasicAuthConfiguration {
 
-    /**@Bean
+    @Bean
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user = SecurityProperties.User.withUsername("user")
                 .password("{noop}password")
                 .roles("USER")
                 .build();
-        return new InMemoryUserDetailsManager(user);
+        return new InMemoryUserDetailsManager(user);**/
 
 
-    @Bean
+    /**@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf()
+        /**http.csrf()
                 .disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**")
@@ -32,7 +30,19 @@ public class BasicAuthConfiguration {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .httpBasic();
+                .httpBasic();**/
+        /**http
+                .authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .and()
+                .httpBasic().disable();
+        http.authorizeRequests().antMatchers("/public/**").permitAll()
+                .antMatchers("/api/**").hasRole("USER")
+                .anyRequest().authenticated()
+                .and().formLogin().disable();
+
         return http.build();
-    }**/
-//}
+    }
+}**/

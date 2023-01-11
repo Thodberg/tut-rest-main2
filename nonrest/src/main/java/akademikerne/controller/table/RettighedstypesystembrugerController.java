@@ -73,22 +73,29 @@ class RettighedstypesystembrugerController {
                 findAllByRollenavnAndRettighedstypesystemidEqualsAndRolleindehaveridEquals
                         (UtilController.SYSTEM_EJER, rettighedstypesystembruger.getRettighedstypesystemid(), logedinUser  );
         boolean isSystemEjer = false;
-        Integer revfrekvens = -1;
+
         if(rollebrugersystemrettighedview.isEmpty()) {
             isSystemEjer = false;
         } else {
             isSystemEjer = true;
-            revfrekvens = rollebrugersystemrettighedview.get(0).getRevideringsfrekvens();
+            //revfrekvens = rollebrugersystemrettighedview.get(0).getRevideringsfrekvens();
         }
 
         if(!(isSystemEjer || afdelingslederIdentical))
             return null;
 
-        rettighedstypesystembruger.setRettetafid(logedinUser);
+        List<Rollebrugersystemrettighedview> rollebrugersystemrettighedview2 = this.rollebrugersystemrettighedviewRepository.
+                findAllByRollenavnAndRettighedstypesystemidEquals
+                        (UtilController.SYSTEM_EJER, rettighedstypesystembruger.getRettighedstypesystemid());
+        Integer revfrekvens = rollebrugersystemrettighedview2.get(0).getRevideringsfrekvens();
+
+        rettighedstypesystembruger.setOprettetafid(logedinUser);
         Date rightNow = new Date(System.currentTimeMillis());
         rettighedstypesystembruger.setOprettetdato(rightNow);
         int monthNow = rightNow.getMonth();
         Date naesteRevDato = new Date(System.currentTimeMillis());
+
+
         naesteRevDato.setMonth(monthNow + revfrekvens);
         rettighedstypesystembruger.setNaesterevideringsdato(naesteRevDato);
 
