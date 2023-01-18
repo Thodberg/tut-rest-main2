@@ -19,7 +19,7 @@ public class AkademikerneApplication {
 
 
 	public static void main(String... args) {
-
+		// testkommentar
 		principalUser = new Brugere();
 		principalUser.setBrugerid(3);
 		SpringApplication.run(AkademikerneApplication.class, args)
