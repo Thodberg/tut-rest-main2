@@ -8,7 +8,7 @@ import java.util.List;
 public interface BrugereviewRepository extends JpaRepository<Brugereview, Integer> {
 
     List<Brugereview>
-        findAllByAfdelingslederid(Integer id);
+    findAllByAfdelingslederid(Integer id);
 
     List<Brugereview>
     findAllByAfdelingslederidOrderByBrugernavn(Integer id);

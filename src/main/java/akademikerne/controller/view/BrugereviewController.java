@@ -31,7 +31,7 @@ class BrugereviewController {
     @GetMapping("/brugereview/systemejer")
     List<Brugereview> allbrugere() {
         List<Brugereview> list1 =
-        brugereviewRepository.findAllByOrderByBrugernavn();
+                brugereviewRepository.findAllByOrderByBrugernavn();
         return list1;
     }
 

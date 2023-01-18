@@ -12,18 +12,18 @@ import java.util.List;
 @RestController
 public class RollebrugerviewController {
 
-        private final RollebrugerviewRepository rollebrugerviewRepository;
+    private final RollebrugerviewRepository rollebrugerviewRepository;
 
-        RollebrugerviewController(RollebrugerviewRepository repository) {
-            this.rollebrugerviewRepository = repository;
-        }
+    RollebrugerviewController(RollebrugerviewRepository repository) {
+        this.rollebrugerviewRepository = repository;
+    }
 
 
-        // Aggregate root
-        // tag::get-aggregate-root[]
-        @GetMapping("/rollebrugerview")
-        List<Rollebrugerview> all() {
-            return rollebrugerviewRepository.findAll();
-        }
+    // Aggregate root
+    // tag::get-aggregate-root[]
+    @GetMapping("/rollebrugerview")
+    List<Rollebrugerview> all() {
+        return rollebrugerviewRepository.findAll();
+    }
 
 }

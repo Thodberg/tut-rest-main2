@@ -8,7 +8,7 @@ import java.util.List;
 public interface RollebrugersystemrettighedviewRepository extends JpaRepository<Rollebrugersystemrettighedview, Integer> {
 
     public List<Rollebrugersystemrettighedview>
-        findAllByRollenavnAndRettighedstypesystemidEqualsAndRolleindehaveridEquals
+    findAllByRollenavnAndRettighedstypesystemidEqualsAndRolleindehaveridEquals
             (String rollenavn, Integer rettighedtypesystemid, Integer rolleindehaveid);
     public List<Rollebrugersystemrettighedview>
     findAllByRollenavnAndRettighedstypesystemidEquals

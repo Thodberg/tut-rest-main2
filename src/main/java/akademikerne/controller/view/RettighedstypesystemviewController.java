@@ -13,19 +13,19 @@ import java.util.List;
 public class RettighedstypesystemviewController {
 
 
-        private final RettighedstypesystemviewRepository rettighedstypesystemviewrepository;
+    private final RettighedstypesystemviewRepository rettighedstypesystemviewrepository;
 
-        RettighedstypesystemviewController(RettighedstypesystemviewRepository repository) {
-            this.rettighedstypesystemviewrepository = repository;
-        }
+    RettighedstypesystemviewController(RettighedstypesystemviewRepository repository) {
+        this.rettighedstypesystemviewrepository = repository;
+    }
 
 
-        // Aggregate root
-        // tag::get-aggregate-root[]
-        @GetMapping("/rettighedstypesystemview")
-        List<Rettighedstypesystemview> all() {
-            return rettighedstypesystemviewrepository.findAll();
-        }
+    // Aggregate root
+    // tag::get-aggregate-root[]
+    @GetMapping("/rettighedstypesystemview")
+    List<Rettighedstypesystemview> all() {
+        return rettighedstypesystemviewrepository.findAll();
+    }
 
 
 }

@@ -14,3 +14,4 @@ public interface BrugereRepository extends JpaRepository<Brugere, Integer> {
 
     List<Brugere> findAllByLoginbrugernavnEqualsAndPasswordEquals(String loginbrugernavn, String password);
 }
+

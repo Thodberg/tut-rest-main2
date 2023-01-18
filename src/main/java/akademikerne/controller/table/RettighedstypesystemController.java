@@ -19,7 +19,7 @@ class RettighedstypesystemController {
     }
 
 
-     @GetMapping("/rettighedstypesystem")
+    @GetMapping("/rettighedstypesystem")
     List<Rettighedstypesystem> all() {
         return rettighedstypesystemRepository.findAll();
     }

@@ -30,8 +30,8 @@ public class RollebrugersystemrettighedviewController {
     @GetMapping("/rollebrugersystemrettighedview/afdelingsleder")
     List<Rollebrugersystemrettighedview> allSystems() {
         List<Rollebrugersystemrettighedview> list =
-        rollebrugersystemrettighedviewRepository.
-                findAllByRollenavnEqualsOrderBySystemnavn(UtilController.SYSTEM_EJER);
+                rollebrugersystemrettighedviewRepository.
+                        findAllByRollenavnEqualsOrderBySystemnavn(UtilController.SYSTEM_EJER);
 
         return list;
     }
@@ -45,7 +45,7 @@ public class RollebrugersystemrettighedviewController {
                                 (UtilController.SYSTEM_EJER, rolleindehaverid);
         return list1;
 
-      }
+    }
 
 
 
