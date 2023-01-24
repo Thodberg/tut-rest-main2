@@ -39,8 +39,9 @@ public class RollebrugersystemrettighedviewController {
         entityManager.createNativeQuery("");
 
         List<Rollebrugersystemrettighedview> list =
-                rollebrugersystemrettighedviewRepository.
-                        findAllByRollenavnEqualsOrderBySystemnavn(UtilController.SYSTEM_EJER);
+               rollebrugersystemrettighedviewRepository.
+                       findAllByRollenavnEqualsOrderBySystemnavn(UtilController.SYSTEM_EJER);
+
 
         return list;
     }
