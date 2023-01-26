@@ -5,11 +5,13 @@ import akademikerne.controller.UtilController;
 import akademikerne.domain.table.Adminroller;
 import akademikerne.exception.NotFoundException;
 import akademikerne.repository.table.AdminrollerRepository;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @CrossOrigin(origins = UtilController.KLIENT_URL)
 @RestController
+@Service
 class AdminrollerController {
 
     private final AdminrollerRepository adminrollerrepository;
